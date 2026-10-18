@@ -1,0 +1,20 @@
+Codex额度条 0.5.0 源码说明
+本压缩包只包含程序源代码、自动测试、构建脚本及不含身份的配置示例。
+普通使用请运行分享包的启动.cmd，不需要构建源码。
+
+开发构建：
+1. 安装PowerShell 7（仅开发时需要）。
+2. 在源码根目录用PowerShell 7运行 scripts/Initialize-DevTools.ps1；官方.NET SDK会下载到源码上级的.tools目录，不修改系统PATH。
+3. 运行 scripts/Build.ps1，scripts/Test.ps1。
+4. 窗口、真实界面逻辑测试见 scripts/Test-Windows.ps1、scripts/Test-Live.ps1。
+   首次使用引导的内置测试参数为 --setup-self-test <报告路径>。
+5. 生成朋友包使用 scripts/Publish-Share.ps1 -CodexPath <官方codex.exe绝对路径>；
+   需要third-party/codex目录中的对应版本LICENSE和NOTICE，脚本不会复制个人配置。
+
+账号绑定只用于运行机器，不应提交或分发：
+live.local.json、display.local.json、live-state.json及任何Codex凭据。
+分享版默认把运行配置写入%LOCALAPPDATA%\CodexQuotaBar。
+本项目为C#/WPF独立浮层，CodexUsageProvider使用官方App Server只读账号/额度接口。
+拖动和系统托盘沿用0.4.0实现；0.5.0增加首次使用引导和分享包。
+第三方许可证请见主分享包的“组件与许可”，以及本源码third-party目录。
+

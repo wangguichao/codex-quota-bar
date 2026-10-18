@@ -1,0 +1,9 @@
+{
+  "CodexExecutable": "C:\\Path\\To\\codex.exe",
+  "Identity": {
+    "AccountFingerprint": "",
+    "UsageAccountFingerprint": "",
+    "Space": "personal"
+  },
+  "RefreshSeconds": 60
+}

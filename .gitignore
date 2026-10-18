@@ -1,0 +1,42 @@
+# Build and local tools
+.tools/
+**/bin/
+**/obj/
+**/TestResults/
+artifacts/
+work/
+outputs/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Personal runtime data and credentials
+**/live.local.json
+**/display.local.json
+**/live-state.json
+**/*.settings.json
+**/auth.json
+**/config.toml
+.env
+.env.*
+!.env.example
+.codex/
+.agents/
+.aws/
+*.pem
+*.key
+*.pfx
+
+# Binary releases belong in Releases
+*.exe
+*.dll
+*.pdb
+*.zip
+*.nupkg
+
+# Local diagnostic evidence
+docs/evidence/*
+!docs/evidence/.gitkeep
+

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><TargetFramework>net10.0</TargetFramework><IsTestProject>true</IsTestProject><IsPackable>false</IsPackable></PropertyGroup>
+<ItemGroup>
+<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1"/>
+<PackageReference Include="xunit" Version="2.9.3"/>
+<PackageReference Include="xunit.runner.visualstudio" Version="3.1.5"><PrivateAssets>all</PrivateAssets></PackageReference>
+<PackageReference Include="coverlet.collector" Version="6.0.4"><PrivateAssets>all</PrivateAssets></PackageReference>
+<ProjectReference Include="../../src/CodexQuotaBar.Core/CodexQuotaBar.Core.csproj"/>
+</ItemGroup><ItemGroup><ProjectReference Include="../CodexQuotaBar.FakeServer/CodexQuotaBar.FakeServer.csproj" ReferenceOutputAssembly="false"/></ItemGroup>
+<Target Name="CopyTestServer" AfterTargets="Build">
+<ItemGroup><TestServer Include="../CodexQuotaBar.FakeServer/bin/$(Configuration)/net10.0/*"/></ItemGroup>
+<Copy SourceFiles="@(TestServer)" DestinationFolder="$(OutDir)TestServer"/>
+</Target>
+</Project>
+
